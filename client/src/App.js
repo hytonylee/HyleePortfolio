@@ -1,23 +1,42 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 
-import AppNavBar from './components/AppNavBar'
+const MainPage = () => (
+    <div>
+        This is the Main page.
+    </div>
+)
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+const Portfolio = () => (
+    <div>
+        This is the Porfolio Page.
+    </div>
+)
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <AppNavBar />
-        <Container>
-          <h1>
-            Hello World
-          </h1>
-        </Container>
-      </div>
-    )
-  }
-}
+const Blog = () => (
+    <div>
+        This is the Blog page.
+    </div>
+)
 
-export default App
+const Contact = () => (
+    <div>
+        This is the Contact page.
+    </div>
+)
+
+const routes = (
+    <BrowserRouter>
+        <div>
+            <Route path='/' exact component={MainPage} />
+            <Route path='/portfolio' exact component={Portfolio} />
+            <Route path='/blog' exact component={Blog} />
+            <Route path='/contact' exact component={Contact} />
+        </div>
+    </BrowserRouter>
+);
+
+ReactDOM.render(routes, document.getElementById('app'));
