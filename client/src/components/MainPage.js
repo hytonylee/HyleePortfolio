@@ -3,7 +3,8 @@ import React from 'react';
 
 const MainPage = () => (
     <div>
-        This is the Main page.
+        <h1>Tony Lee</h1>
+        <p>Welcome to my portfolio.</p>
     </div>
 
 )
