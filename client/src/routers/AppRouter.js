@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import '../styles/styles.scss';
 
 import MainPage from '../components/MainPage';
+import Dashboard from '../components/Dashboard';
 import Portfolio from '../components/Portfolio';
 import CreatePost from '../components/CreatePost';
 import PostPage from '../components/PostPage';
@@ -19,6 +20,7 @@ const AppRouter = () => (
             <Header />
             <Switch>
                 <Route path='/' exact component={MainPage} />
+                <Route path='/Dashboard' exact component={Dashboard} />
                 <Route path='/Portfolio' exact component={Portfolio} />
                 <Route path='/CreatePost' exact component={CreatePost} />
                 <Route path='/PostPage/:id' exact component={PostPage} />
