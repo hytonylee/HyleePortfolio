@@ -1,10 +1,3 @@
-// EDIT_POST
-const editPost = (id, updates) => ({
-    type: 'EDIT_POST',
-    id,
-    updates
-})
-
 // SET_TEXT_FILTER
 export const setTextFilter = (text = '') => ({
     type: 'SET_TEXT_FILTER',
@@ -19,6 +12,11 @@ export const sortByDate = () => ({
 // SORT_BY_TYPE
 export const sortByType = () => ({
     type: 'SORT_BY_TYPE',
+})
+
+// SORT_BY_AMOUNT
+export const sortByAmount = () => ({
+    type: 'SORT_BY_AMOUNT',
 })
 
 // SET_START_DATE

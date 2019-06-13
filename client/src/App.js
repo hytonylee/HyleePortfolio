@@ -21,7 +21,7 @@ const PostOne = store.dispatch(addPost({
     postType: 'portfolio',
     note: 'POS Web application with react frontend and Rail backend.',
     link: 'https://github.com/hytonylee/Ramen-Kiosk',
-    createdAt: 1000
+    createdAt: 1000,
 }))
 
 const postTwo = store.dispatch(addPost({
@@ -29,10 +29,18 @@ const postTwo = store.dispatch(addPost({
     postType: 'portfolio',
     note: 'Swift format upload and convert to readable csv in MERN (react) stack.',
     link: 'https://github.com/hytonylee/Swift-Converter',
-    createdAt: -1000
+    createdAt: -1000,
 }));
 
-store.dispatch(setTextFilter('react'));
+const postThree = store.dispatch(addPost({
+    desc: 'Journal 1',
+    postType: 'blog',
+    note: 'Writing on how to build React with Apollo.',
+    link: 'https://github.com/hytonylee/Swift-Converter',
+    createdAt: 100,
+}));
+
+// store.dispatch(setTextFilter('react'));
 
 setTimeout(() => {
     store.dispatch(setTextFilter('swift'))

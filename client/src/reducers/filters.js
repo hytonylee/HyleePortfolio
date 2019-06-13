@@ -24,6 +24,11 @@ export default (state = filtersReducerDefaultState, action) => {
                 ...state,
                 sortBy: 'type'
             }
+        case 'SORT_BY_AMOUNT':
+            return {
+                ...state,
+                sortBy: 'amount'
+            }
         case 'SET_START_DATE':
             return {
                 ...state,

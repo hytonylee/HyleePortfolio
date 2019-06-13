@@ -1,14 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { removePost } from '../actions/posts';
 
-const PortfolioListItem = ({ desc, postType, link, createdAt }) => (
+const PortfolioListItem = ({ dispatch, id, desc, postType, link, note, createdAt }) => (
     <div>
         <hr />
         <h3>{desc}</h3>
-        <p>{postType}</p>
-        <p>{link}</p>
-        <p>{createdAt}</p>
+        <button onClick={() => {
+            dispatch(removePost({ id }))
+        }}>Remove</button>
+
+        <li>{postType}</li>
+        <li>{note}</li>
+        <li>{link}</li>
+        <li>{createdAt}</li>
+
     </div>
 )
 
-export default PortfolioListItem;
+export default connect()(PortfolioListItem);
 

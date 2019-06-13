@@ -6,7 +6,6 @@ export const addPost = ({
     note = '',
     postType = '',
     createdAt = 0,
-    sortBy = 0,
     link = '' } = {}) => ({
         type: 'ADD_POST',
         post: {
@@ -15,8 +14,7 @@ export const addPost = ({
             postType,
             note,
             link,
-            createdAt,
-            sortBy,
+            createdAt
         }
     })
 

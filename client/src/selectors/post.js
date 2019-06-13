@@ -10,7 +10,7 @@ export default (posts, { text, sortBy, startDate, endDate }) => {
         if (sortBy === 'date') {
             return a.createdAt < b.createdAt ? 1 : -1
         } else if (sortBy === 'type') {
-            return a.createdAt < b.createdAt ? 1 : -1
+            return a.postType < b.postType ? 1 : -1
         }
     })
 };
