@@ -1,8 +1,11 @@
 import React from 'react';
+import PortfolioList from './PortfolioList';
+
+
 
 const Dashboard = () => (
     <div>
-        This is the dashboard page.
+        <PortfolioList />
     </div>
 )
 

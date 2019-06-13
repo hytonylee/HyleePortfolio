@@ -8,6 +8,7 @@ import configureStore from './store/configureStore';
 import { addPost } from './actions/posts';
 import { setTextFilter } from './actions/filters';
 import getVisiblePosts from './selectors/post';
+import { Provider } from 'react-redux';
 
 //Routers
 import AppRouter from './routers/AppRouter';
@@ -33,13 +34,17 @@ const postTwo = store.dispatch(addPost({
 
 store.dispatch(setTextFilter('react'));
 
-// store.subscribe(() => {
 const state = store.getState();
 const visiblePosts = getVisiblePosts(state.posts, state.filters)
 console.log(visiblePosts);
-// });
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+const jsx = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+)
+
+ReactDOM.render(jsx, document.getElementById('app'));
 
 
 
