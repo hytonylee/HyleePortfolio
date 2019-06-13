@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PortfolioListItem from './PortfolioListItem'
+import selectPosts from '../selectors/post';
 
 const PortfolioList = (props) => (
     <div>
         <h1>Portfolio List</h1>
-        <p>{props.posts.length}</p>
-        <p>{props.filters.text}</p>
+        {props.posts.map((post) => {
+            return < PortfolioListItem key={post.id} {...post} />
+        })}
     </div>
 )
-
-
 
 // const ConnectedPostList = connect((state) => {
 //     return {
@@ -23,8 +24,7 @@ const PortfolioList = (props) => (
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.posts,
-        filters: state.filters
+        posts: selectPosts(state.posts, state.filters)
     }
 }
 

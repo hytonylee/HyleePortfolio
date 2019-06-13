@@ -27,12 +27,16 @@ const PostOne = store.dispatch(addPost({
 const postTwo = store.dispatch(addPost({
     desc: 'Swift Converter',
     postType: 'portfolio',
-    note: 'Swift format upload and convert to readable csv in MERN stack.',
+    note: 'Swift format upload and convert to readable csv in MERN (react) stack.',
     link: 'https://github.com/hytonylee/Swift-Converter',
     createdAt: -1000
 }));
 
 store.dispatch(setTextFilter('react'));
+
+setTimeout(() => {
+    store.dispatch(setTextFilter('swift'))
+}, 3000)
 
 const state = store.getState();
 const visiblePosts = getVisiblePosts(state.posts, state.filters)
