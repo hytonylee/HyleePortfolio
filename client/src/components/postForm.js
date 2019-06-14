@@ -1,11 +1,20 @@
 import React from 'react';
+import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
-export default class postForm extends React.Component {
+const now = moment();
+console.log(now.format('MMM Do, YYYY - HH:MM:SS'));
+
+export default class PostForm extends React.Component {
     state = {
         desc: '',
         postType: '',
         link: '',
         note: '',
+        createdAt: moment(),
+        calendarFocused: false
     }
     // onDescChange = (e) => {
     //     const desc = e.target.value;
@@ -28,6 +37,14 @@ export default class postForm extends React.Component {
         this.setState(() => ({
             [key]: value
         }))
+    }
+
+    onDateChange = (createdAt) => {
+        this.setState(() => ({ createdAt }))
+    }
+
+    onFocusChange = ({ focused }) => {
+        this.setState(() => ({ calendarFocused: focused }))
     }
 
     render() {
@@ -55,6 +72,14 @@ export default class postForm extends React.Component {
                         value={this.state.link}
                         // onChange={this.onLinkChange}
                         onChange={(e) => this.handleChange('link', e.target.value)}
+                    />
+                    <SingleDatePicker
+                        date={this.state.createdAt}
+                        onDateChange={this.onDateChange}
+                        focused={this.state.calendarFocused}
+                        onFocusChange={this.onFocusChange}
+                        numberOfMonths={1}
+                        isOutsideRange={() => false}
                     />
                     <textarea
                         cols="30" rows="10"
