@@ -1,11 +1,13 @@
 import React from 'react';
+import PostForm from './PostForm';
 
 const CreatePost = (props) => {
     console.log(props);
 
     return (
         <div>
-            This is the Create Post page.
+            <h1>Create Post</h1>
+            <PostForm />
         </div>
     )
 }
