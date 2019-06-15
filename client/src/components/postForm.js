@@ -3,6 +3,7 @@ import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import { runInThisContext } from 'vm';
 
 const now = moment();
 console.log(now.format('MMM Do, YYYY - HH:MM:SS'));
@@ -14,7 +15,8 @@ export default class PostForm extends React.Component {
         link: '',
         note: '',
         createdAt: moment(),
-        calendarFocused: false
+        calendarFocused: false,
+        error: ''
     }
     // onDescChange = (e) => {
     //     const desc = e.target.value;
@@ -40,17 +42,36 @@ export default class PostForm extends React.Component {
     }
 
     onDateChange = (createdAt) => {
-        this.setState(() => ({ createdAt }))
+        if (createdAt) {
+            this.setState(() => ({ createdAt }))
+        }
     }
 
     onFocusChange = ({ focused }) => {
         this.setState(() => ({ calendarFocused: focused }))
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        if (!this.state.desc || !this.state.postType || !this.state.note) {
+            this.setState(() => ({ error: `Please provide required fields of ${this.state}` }))
+        } else {
+            this.setState(() => ({ error: '' }))
+            this.props.onSubmit({
+                desc: this.state.desc,
+                postType: this.state.postType,
+                link: this.state.link,
+                note: this.state.note,
+                createdAt: this.state.createdAt.valueOf()
+            })
+        }
+    }
+
     render() {
         return (
             <div>
-                <form action="">
+                {this.state.error && <p>{this.state.error}</p>}
+                <form onSubmit={this.onSubmit}>
                     <input
                         type="text"
                         placeholder="Description"

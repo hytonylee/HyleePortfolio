@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTextFilter, sortByDate, sortByType, sortByAmount } from '../actions/filters';
+import { setTextFilter, sortByDate, sortByType } from '../actions/filters';
 
 const PortfolioListFilter = (props) => (
     <div>

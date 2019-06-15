@@ -42,9 +42,9 @@ const postThree = store.dispatch(addPost({
 
 // store.dispatch(setTextFilter('react'));
 
-setTimeout(() => {
-    store.dispatch(setTextFilter('swift'))
-}, 3000)
+// setTimeout(() => {
+//     store.dispatch(setTextFilter('swift'))
+// }, 3000)
 
 const state = store.getState();
 const visiblePosts = getVisiblePosts(state.posts, state.filters)
