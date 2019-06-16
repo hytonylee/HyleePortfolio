@@ -48,7 +48,7 @@ const postThree = store.dispatch(addPost({
 
 const state = store.getState();
 const visiblePosts = getVisiblePosts(state.posts, state.filters)
-console.log(visiblePosts);
+// console.log(visiblePosts);
 
 const jsx = (
     <Provider store={store}>

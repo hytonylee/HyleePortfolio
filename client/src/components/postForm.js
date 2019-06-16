@@ -3,37 +3,25 @@ import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
-import { runInThisContext } from 'vm';
 
-const now = moment();
-console.log(now.format('MMM Do, YYYY - HH:MM:SS'));
+// const now = moment();
+// console.log(now.format('MMM Do, YYYY - HH:MM:SS'));
 
 export default class PostForm extends React.Component {
-    state = {
-        desc: '',
-        postType: '',
-        link: '',
-        note: '',
-        createdAt: moment(),
-        calendarFocused: false,
-        error: ''
+    constructor(props) {
+        super(props);
+
+
+        this.state = {
+            desc: props.post ? props.post.desc : '',
+            postType: props.post ? props.post.postType : '',
+            link: props.post ? props.post.link : '',
+            note: props.post ? props.post.note : '',
+            createdAt: props.post ? moment(props.post.createdAt) : moment(),
+            calendarFocused: false,
+            error: ''
+        }
     }
-    // onDescChange = (e) => {
-    //     const desc = e.target.value;
-    //     this.setState(() => ({ desc }));
-    // }
-    // onPostTypeChange = (e) => {
-    //     const postType = e.target.value;
-    //     this.setState(() => ({ postType }));
-    // }
-    // onLinkChange = (e) => {
-    //     const link = e.target.value;
-    //     this.setState(() => ({ link }));
-    // }
-    // onNoteChange = (e) => {
-    //     const note = e.target.value;
-    //     this.setState(() => ({ note }));
-    // }
 
     handleChange = (key, value) => {
         this.setState(() => ({
@@ -84,14 +72,12 @@ export default class PostForm extends React.Component {
                         type="postType"
                         placeholder="Portfolio"
                         value={this.state.postType}
-                        // onChange={this.onPostTypeChange}
                         onChange={(e) => this.handleChange('postType', e.target.value)}
                     />
                     <input
                         type="text"
                         placeholder="Link"
                         value={this.state.link}
-                        // onChange={this.onLinkChange}
                         onChange={(e) => this.handleChange('link', e.target.value)}
                     />
                     <SingleDatePicker
@@ -106,7 +92,6 @@ export default class PostForm extends React.Component {
                         cols="30" rows="10"
                         placeholder="Notes"
                         value={this.state.note}
-                        // onChange={this.onNoteChange}
                         onChange={(e) => this.handleChange('note', e.target.value)}
                     ></textarea>
                     <button>Add Post</button>
@@ -115,12 +100,3 @@ export default class PostForm extends React.Component {
         )
     }
 }
-
-
-
-// onAmountChange = (e) => {
-//     const amount = e.target.value;
-//     if (amount.match(/^\d*(\.\d{0,2})?$/)) {
-//         this.setState(() => ({ amount }))
-//     }
-// }
