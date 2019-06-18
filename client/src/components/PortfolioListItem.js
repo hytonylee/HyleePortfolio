@@ -1,15 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { removePost } from '../actions/posts';
 
-const PortfolioListItem = ({ dispatch, id, desc, postType, link, note, createdAt }) => (
+const PortfolioListItem = ({ id, desc, postType, link, note, createdAt }) => (
     <div>
         <hr />
         <h3>{desc}</h3>
-        <button onClick={() => {
-            dispatch(removePost({ id }))
-        }}>Remove</button>
         <button>
             <Link to={`/EditPost/${id}`}>Edit</Link>
         </button>
@@ -21,5 +16,5 @@ const PortfolioListItem = ({ dispatch, id, desc, postType, link, note, createdAt
     </div >
 )
 
-export default connect()(PortfolioListItem);
+export default PortfolioListItem;
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PostForm from './PostForm';
-import { editPost } from '../actions/posts';
-
+import { editPost, removePost } from '../actions/posts';
 
 
 const EditPost = (props) => {
@@ -16,6 +15,10 @@ const EditPost = (props) => {
                     props.history.push('/dashboard')
                 }}
             />
+            <button onClick={() => {
+                props.dispatch(removePost({ id: props.post.id }))
+                props.history.push('/dashboard')
+            }}>Remove</button>
         </div>
     )
 }
