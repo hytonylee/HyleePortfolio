@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import 'react-dates/lib/css/_datepicker.css';
 
 //Redux
 import configureStore from './store/configureStore';
@@ -48,7 +49,7 @@ const postThree = store.dispatch(addPost({
 
 const state = store.getState();
 const visiblePosts = getVisiblePosts(state.posts, state.filters)
-// console.log(visiblePosts);
+console.log(visiblePosts);
 
 const jsx = (
     <Provider store={store}>
