@@ -8,7 +8,6 @@ import Dashboard from '../components/Dashboard';
 import Portfolio from '../components/Portfolio';
 import CreatePost from '../components/CreatePost';
 import EditPost from '../components/EditPost';
-import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 import NotFound from '../components/NotFound';
 import Header from '../components/Header';
@@ -24,7 +23,6 @@ const AppRouter = () => (
                 <Route path='/Portfolio' exact component={Portfolio} />
                 <Route path='/CreatePost' exact component={CreatePost} />
                 <Route path='/EditPost/:id' exact component={EditPost} />
-                <Route path='/Blog' exact component={Blog} />
                 <Route path='/Contact' exact component={Contact} />
                 <Route component={NotFound} />
             </Switch>
