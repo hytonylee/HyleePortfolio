@@ -3,3 +3,7 @@ backend/node_modules
 client/.env
 client/node_modules
 client/src/playground
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
