@@ -62,7 +62,7 @@ export default class PostForm extends React.Component {
                 <form onSubmit={this.onSubmit}>
                     <input
                         type="text"
-                        placeholder="Description"
+                        placeholder="Title"
                         autoFocus
                         value={this.state.desc}
                         // onChange={this.onDescChange}
@@ -70,7 +70,7 @@ export default class PostForm extends React.Component {
                     />
                     <input
                         type="postType"
-                        placeholder="Portfolio"
+                        placeholder="Post Type"
                         value={this.state.postType}
                         onChange={(e) => this.handleChange('postType', e.target.value)}
                     />
