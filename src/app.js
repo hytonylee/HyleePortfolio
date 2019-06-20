@@ -6,13 +6,15 @@ import 'react-dates/lib/css/_datepicker.css';
 
 //Redux
 import configureStore from './store/configureStore';
-import { addPost } from './actions/posts';
-import { setTextFilter } from './actions/filters';
+import { addPost } from './actions/posts';;
 import getVisiblePosts from './selectors/post';
 import { Provider } from 'react-redux';
 
 //Routers
 import AppRouter from './routers/AppRouter';
+
+import './firebase/firebase';
+
 
 
 const store = configureStore();
