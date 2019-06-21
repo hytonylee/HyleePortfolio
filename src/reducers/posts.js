@@ -22,6 +22,8 @@ export default (state = postsReducerDefaultState, action) => {
                     return post;
                 }
             })
+        case 'SET_POSTS':
+            return action.posts
         default:
             return state;
     }

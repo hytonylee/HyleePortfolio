@@ -6,7 +6,8 @@ import 'react-dates/lib/css/_datepicker.css';
 
 //Redux
 import configureStore from './store/configureStore';
-import { addPost } from './actions/posts';;
+import { startSetPosts } from './actions/posts';;
+import { setTextFilter } from './actions/filters';;
 import getVisiblePosts from './selectors/post';
 import { Provider } from 'react-redux';
 
@@ -17,9 +18,9 @@ import AppRouter from './routers/AppRouter';
 import './firebase/firebase';
 
 const store = configureStore();
-const state = store.getState();
-const visiblePosts = getVisiblePosts(state.posts, state.filters)
-console.log(visiblePosts);
+// const state = store.getState();
+// const visiblePosts = getVisiblePosts(state.posts, state.filters)
+// console.log(visiblePosts);
 
 const jsx = (
     <Provider store={store}>
@@ -27,7 +28,14 @@ const jsx = (
     </Provider>
 )
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetPosts()).then(
+    ReactDOM.render(jsx, document.getElementById('app'))
+)
+
+
+
 
 
 
