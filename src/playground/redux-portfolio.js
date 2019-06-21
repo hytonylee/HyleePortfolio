@@ -4,7 +4,7 @@ import uuid from 'uuid';
 
 // ADD_POST
 const addPost = ({
-    desc = '',
+    title = '',
     note = '',
     postType = '',
     createdAt = 0,
@@ -13,7 +13,7 @@ const addPost = ({
         type: 'ADD_POST',
         post: {
             id: uuid(),
-            desc,
+            title,
             postType,
             note,
             link,
@@ -168,7 +168,7 @@ store.subscribe(() => {
 
 // --------------------------- AddPost  --------------------------------------
 const postOne = store.dispatch(addPost({
-    desc: 'Ramen Kiosk',
+    title: 'Ramen Kiosk',
     postType: 'portfolio',
     note: 'POS Web application with React frontend and Rail backend.',
     link: 'https://github.com/hytonylee/Ramen-Kiosk',
@@ -176,7 +176,7 @@ const postOne = store.dispatch(addPost({
 }));
 
 const postTwo = store.dispatch(addPost({
-    desc: 'Swift Converter',
+    title: 'Swift Converter',
     postType: 'portfolio',
     note: 'Swift format upload and convert to readable csv in MERN stack.',
     link: 'https://github.com/hytonylee/Swift-Converter',
@@ -202,7 +202,7 @@ store.dispatch(sortByType());
 const demoState = {
     posts: [{
         id: uuid,
-        desc: 'Ramen Kiosk',
+        title: 'Ramen Kiosk',
         postType: 'portfolio',
         note: 'React Frontend and Ruby on Rail Backend',
         link: 'https://github.com/hytonylee/Ramen-Kiosk',

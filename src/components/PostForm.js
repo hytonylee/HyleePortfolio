@@ -13,7 +13,7 @@ export default class PostForm extends React.Component {
 
 
         this.state = {
-            desc: props.post ? props.post.desc : '',
+            title: props.post ? props.post.title : '',
             postType: props.post ? props.post.postType : '',
             link: props.post ? props.post.link : '',
             note: props.post ? props.post.note : '',
@@ -41,12 +41,12 @@ export default class PostForm extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        if (!this.state.desc || !this.state.postType || !this.state.note) {
+        if (!this.state.title || !this.state.postType || !this.state.note) {
             this.setState(() => ({ error: `Please provide required fields of ${this.state}` }))
         } else {
             this.setState(() => ({ error: '' }))
             this.props.onSubmit({
-                desc: this.state.desc,
+                title: this.state.title,
                 postType: this.state.postType,
                 link: this.state.link,
                 note: this.state.note,
@@ -64,9 +64,9 @@ export default class PostForm extends React.Component {
                         type="text"
                         placeholder="Title"
                         autoFocus
-                        value={this.state.desc}
-                        // onChange={this.onDescChange}
-                        onChange={(e) => this.handleChange('desc', e.target.value)}
+                        value={this.state.title}
+                        // onChange={this.ontitleChange}
+                        onChange={(e) => this.handleChange('title', e.target.value)}
                     />
                     <input
                         type="postType"

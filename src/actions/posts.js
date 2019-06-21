@@ -1,22 +1,31 @@
 import uuid from 'uuid';
+import database from '../firebase/firebase';
 
 // ADD_POST
-export const addPost = ({
-    desc = '',
-    note = '',
-    postType = '',
-    createdAt = 0,
-    link = '' } = {}) => ({
-        type: 'ADD_POST',
-        post: {
-            id: uuid(),
-            desc,
-            postType,
-            note,
-            link,
-            createdAt
-        }
-    })
+export const addPost = (post) => ({
+    type: 'ADD_POST',
+    post
+})
+
+export const startAddPost = (postData = {}) => {
+    return (dispatch) => {
+        const {
+            title = '',
+            postType = '',
+            createdAt = 0,
+            note = '',
+            link = ''
+        } = postData
+        const post = { title, postType, createdAt, note, link }
+
+        database.ref('posts').push(post).then((ref) => {
+            dispatch(addPost({
+                id: ref.key,
+                ...post
+            }))
+        })
+    }
+}
 
 // REMOVE_POST
 export const removePost = ({ id } = {}) => ({

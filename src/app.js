@@ -20,7 +20,7 @@ import './firebase/firebase';
 const store = configureStore();
 
 const PostOne = store.dispatch(addPost({
-    desc: 'Ramen Kiosk',
+    title: 'Ramen Kiosk',
     postType: 'portfolio',
     note: 'POS Web application with react frontend and Rail backend.',
     link: 'https://github.com/hytonylee/Ramen-Kiosk',
@@ -28,7 +28,7 @@ const PostOne = store.dispatch(addPost({
 }))
 
 const postTwo = store.dispatch(addPost({
-    desc: 'Swift Converter',
+    title: 'Swift Converter',
     postType: 'portfolio',
     note: 'Swift format upload and convert to readable csv in MERN (react) stack.',
     link: 'https://github.com/hytonylee/Swift-Converter',
@@ -36,7 +36,7 @@ const postTwo = store.dispatch(addPost({
 }));
 
 const postThree = store.dispatch(addPost({
-    desc: 'Journal 1',
+    title: 'Journal 1',
     postType: 'blog',
     note: 'Writing on how to build React with Apollo.',
     link: 'https://github.com/hytonylee/Swift-Converter',

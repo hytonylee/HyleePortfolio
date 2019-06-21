@@ -21,6 +21,7 @@
 # prototype
 
 /src/playground
+/src/firebase/firebaseMethod.js
 
 # misc
 .DS_Store
@@ -28,6 +29,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env.development
+.env.test
 .env
 
 
@@ -36,6 +39,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
-# firebaseConfig
-/src/firebase/firebase.js
