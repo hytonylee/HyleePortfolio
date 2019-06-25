@@ -1,8 +1,13 @@
 {
-  "name": "boilerplate",
+  "name": "hylee-portfolio-blog",
   "version": "1.0.0",
+  "description": "Tony Lee's portfolio blog template made from React and Firebase.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hytonylee/HyleeBlog.git"
+  },
   "main": "index.js",
-  "author": "Andrew Mead",
+  "author": "Tony Lee",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack",
@@ -15,7 +20,7 @@
   "dependencies": {
     "ajv": "^6.9.1",
     "babel-cli": "^6.26.0",
-    "babel-core": "6.25.0",
+    "babel-core": "6.26.3",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",

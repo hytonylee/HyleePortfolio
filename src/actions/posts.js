@@ -32,12 +32,30 @@ export const removePost = ({ id } = {}) => ({
     id
 });
 
+export const startRemovePost = ({ id } = {}) => {
+    return (dispatch) => {
+        return database.ref(`posts/${id}`).remove()
+            .then(() => {
+                dispatch(removePost({ id }));
+            })
+    }
+}
+
 // EDIT_POST
 export const editPost = (id, updates) => ({
     type: 'EDIT_POST',
     id,
     updates
 });
+
+export const startEditPost = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`posts/${id}`).update(updates)
+            .then(() => {
+                dispatch(editPost(id, updates))
+            })
+    }
+};
 
 // SET_POSTS (Fetch Data)
 

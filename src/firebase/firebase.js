@@ -1,4 +1,6 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -14,4 +16,5 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 export { firebase, database as default }
+
 

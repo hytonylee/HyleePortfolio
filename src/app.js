@@ -17,6 +17,7 @@ import AppRouter from './routers/AppRouter';
 //Firebase
 import './firebase/firebase';
 
+
 const store = configureStore();
 // const state = store.getState();
 // const visiblePosts = getVisiblePosts(state.posts, state.filters)
