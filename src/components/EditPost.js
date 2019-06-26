@@ -11,7 +11,7 @@ export class EditPost extends React.Component {
 
     onRemove = () => {
         this.props.startRemovePost({ id: this.props.post.id });
-        this.props.history.push('dashboard');
+        this.props.history.push('/dashboard');
     }
 
     render() {

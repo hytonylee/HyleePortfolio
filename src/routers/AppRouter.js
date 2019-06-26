@@ -9,6 +9,7 @@ import Portfolio from '../components/Portfolio';
 import CreatePost from '../components/CreatePost';
 import EditPost from '../components/EditPost';
 import Contact from '../components/Contact';
+import LoginPage from '../components/LoginPage';
 import NotFound from '../components/NotFound';
 import Header from '../components/Header';
 
@@ -24,6 +25,7 @@ const AppRouter = () => (
                 <Route path='/CreatePost' exact component={CreatePost} />
                 <Route path='/EditPost/:id' exact component={EditPost} />
                 <Route path='/Contact' exact component={Contact} />
+                <Route path='/LoginPage' exact component={LoginPage} />
                 <Route component={NotFound} />
             </Switch>
         </div>

@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 
 //Firebase
-import './firebase/firebase';
+import { firebase } from './firebase/firebase';
 
 
 const store = configureStore();
@@ -35,8 +35,13 @@ store.dispatch(startSetPosts()).then(
     ReactDOM.render(jsx, document.getElementById('app'))
 )
 
-
-
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        console.log('log in');
+    } else {
+        console.log('log out');
+    }
+})
 
 
 

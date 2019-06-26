@@ -8,6 +8,7 @@ const Header = () => (
         {/* <NavLink to='/Portfolio' activeClassName="is-active">Portfolio</NavLink> */}
         <NavLink to='/CreatePost' activeClassName="is-active">Create Post</NavLink>
         <NavLink to='/Contact' activeClassName="is-active">Contact</NavLink>
+        <NavLink to='/LoginPage' activeClassName="is-active">Login</NavLink>
     </header>
 )
 
