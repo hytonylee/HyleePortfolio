@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-const PortfolioListItem = ({ id, title, postType, link, note, createdAt }) => (
+const PortfolioListItem = ({ id, title, postType, image, link, note, createdAt }) => (
     <div>
         <hr />
         <h3>{title}</h3>
@@ -10,6 +10,7 @@ const PortfolioListItem = ({ id, title, postType, link, note, createdAt }) => (
             <Link to={`/EditPost/${id}`}>Edit</Link>
         </button>
         <li>{postType}</li>
+        <li>{image}</li>
         <li>{note}</li>
         <li>{link}</li>
         <li>{moment(createdAt).format('MMMM Do, YYYY')}</li>

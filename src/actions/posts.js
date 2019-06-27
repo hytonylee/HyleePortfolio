@@ -11,11 +11,12 @@ export const startAddPost = (postData = {}) => {
         const {
             title = '',
             postType = '',
+            image = '',
             createdAt = 0,
             note = '',
             link = ''
         } = postData;
-        const post = { title, postType, createdAt, note, link }
+        const post = { title, postType, image, createdAt, note, link }
 
         return database.ref('posts').push(post).then((ref) => {
             dispatch(addPost({

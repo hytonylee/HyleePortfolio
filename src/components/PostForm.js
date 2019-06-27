@@ -11,10 +11,10 @@ export default class PostForm extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             title: props.post ? props.post.title : '',
             postType: props.post ? props.post.postType : '',
+            image: props.image ? props.image.image : '',
             link: props.post ? props.post.link : '',
             note: props.post ? props.post.note : '',
             createdAt: props.post ? moment(props.post.createdAt) : moment(),
@@ -48,6 +48,7 @@ export default class PostForm extends React.Component {
             this.props.onSubmit({
                 title: this.state.title,
                 postType: this.state.postType,
+                image: this.state.image,
                 link: this.state.link,
                 note: this.state.note,
                 createdAt: this.state.createdAt.valueOf()
@@ -68,11 +69,22 @@ export default class PostForm extends React.Component {
                         // onChange={this.ontitleChange}
                         onChange={(e) => this.handleChange('title', e.target.value)}
                     />
-                    <input
+                    <select
+                        name="postType"
+                        id="postType"
                         type="postType"
                         placeholder="Post Type"
                         value={this.state.postType}
                         onChange={(e) => this.handleChange('postType', e.target.value)}
+                    >
+                        <option value="Portfolio">Portfolio</option>
+                        <option value="Blog">Blog</option>
+                    </select>
+                    <input
+                        type="text"
+                        placeholder="Image"
+                        value={this.state.image}
+                        onChange={(e) => this.handleChange('image', e.target.value)}
                     />
                     <input
                         type="text"

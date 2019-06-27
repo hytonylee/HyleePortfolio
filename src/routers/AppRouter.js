@@ -1,21 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import '../styles/styles.scss';
-
+import { createBrowserHistory } from 'history'
 import MainPage from '../components/MainPage';
 import Dashboard from '../components/Dashboard';
 import Portfolio from '../components/Portfolio';
 import CreatePost from '../components/CreatePost';
 import EditPost from '../components/EditPost';
 import Contact from '../components/Contact';
-import LoginPage from '../components/LoginPage';
 import NotFound from '../components/NotFound';
 import Header from '../components/Header';
 
+export const history = createBrowserHistory();
 
 const AppRouter = () => (
-    <BrowserRouter>
+    <Router history={history}>
+        {/* instead of using browser router (which uses brower history by default, we use regular router.) */}
         <div>
             <Header />
             <Switch>
@@ -25,11 +26,10 @@ const AppRouter = () => (
                 <Route path='/CreatePost' exact component={CreatePost} />
                 <Route path='/EditPost/:id' exact component={EditPost} />
                 <Route path='/Contact' exact component={Contact} />
-                <Route path='/LoginPage' exact component={LoginPage} />
                 <Route component={NotFound} />
             </Switch>
         </div>
-    </BrowserRouter>
+    </Router>
 )
 
 export default AppRouter
