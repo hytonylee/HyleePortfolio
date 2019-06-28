@@ -13,7 +13,8 @@ export default class PostForm extends React.Component {
 
         this.state = {
             title: props.post ? props.post.title : '',
-            postType: props.post ? props.post.postType : '',
+            // postType: props.post ? props.post.postType : '',
+            postType: 'Portfolio',
             image: props.image ? props.image.image : '',
             link: props.post ? props.post.link : '',
             note: props.post ? props.post.note : '',
@@ -41,7 +42,7 @@ export default class PostForm extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        if (!this.state.title || !this.state.postType || !this.state.note) {
+        if (!this.state.title || !this.state.note) {
             this.setState(() => ({ error: `Please provide required fields of ${this.state}` }))
         } else {
             this.setState(() => ({ error: '' }))
@@ -73,7 +74,6 @@ export default class PostForm extends React.Component {
                         name="postType"
                         id="postType"
                         type="postType"
-                        placeholder="Post Type"
                         value={this.state.postType}
                         onChange={(e) => this.handleChange('postType', e.target.value)}
                     >

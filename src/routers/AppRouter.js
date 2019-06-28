@@ -7,10 +7,12 @@ import MainPage from '../components/MainPage';
 import Dashboard from '../components/Dashboard';
 import Portfolio from '../components/Portfolio';
 import CreatePost from '../components/CreatePost';
+import LoginPage from '../components/LoginPage';
 import EditPost from '../components/EditPost';
 import NotFound from '../components/NotFound';
 // import Header from '../components/Header';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export const history = createBrowserHistory();
 
@@ -20,8 +22,11 @@ const AppRouter = () => (
         <div>
             {/* <Header /> */}
             <Switch>
-                <Route path='/' exact component={MainPage} />
-                <Route path='/Portfolio' exact component={Portfolio} />
+
+                {/* <Route path='/' exact component={MainPage} />
+                <Route path='/Portfolio' exact component={Portfolio} /> */}
+                <PublicRoute path="/" exact component={LoginPage} />
+                {/* <PrivateRoute path='/' exact component={MainPage} /> */}
                 <PrivateRoute path='/Dashboard' exact component={Dashboard} />
                 <PrivateRoute path='/CreatePost' exact component={CreatePost} />
                 <PrivateRoute path='/EditPost/:id' exact component={EditPost} />
