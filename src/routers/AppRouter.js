@@ -3,7 +3,6 @@ import { Router, Route, Switch } from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import '../styles/styles.scss';
 import { createBrowserHistory } from 'history'
-import MainPage from '../components/MainPage';
 import Dashboard from '../components/Dashboard';
 import Portfolio from '../components/Portfolio';
 import CreatePost from '../components/CreatePost';
@@ -22,8 +21,6 @@ const AppRouter = () => (
         <div>
             {/* <Header /> */}
             <Switch>
-
-                {/* <Route path='/' exact component={MainPage} />
                 <Route path='/Portfolio' exact component={Portfolio} /> */}
                 <PublicRoute path="/" exact component={LoginPage} />
                 {/* <PrivateRoute path='/' exact component={MainPage} /> */}
