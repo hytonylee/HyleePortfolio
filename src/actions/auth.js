@@ -7,7 +7,20 @@ export const login = (uid) => ({
 
 export const startLogin = () => {
     return () => {
-        return firebase.auth().signInWithPopup(googleAuthProvider);
+        return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
+            const token = result.credential.accessToken;
+            const user = result.user;
+
+            const isNewUser = result.additionalUserInfo.isNewUser;
+            if (isNewUser) {
+                console.log('Incorrect login user!!')
+                result.user.delete();
+            } else {
+                console.log('Login Success!!');
+            }
+        }).catch((error) => {
+            console.log("Login Error: ", error)
+        });
     }
 }
 
