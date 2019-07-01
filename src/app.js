@@ -6,7 +6,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 //Redux
 import configureStore from './store/configureStore';
-import { startSetPosts } from './actions/posts';;
+import { startSetPosts, startSetPostsWithoutAuth } from './actions/posts';;
 import { login, logout } from './actions/auth';;
 import { Provider } from 'react-redux';
 
@@ -43,14 +43,16 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(login(user.uid));
         store.dispatch(startSetPosts()).then(() => {
             renderApp();
-            if (history.location.pathname === '/') {
-                history.push('/dashboard')
+            if (history.location.pathname === '/LoginPage') {
+                history.push('/Dashboard')
             }
         })
     } else {
         store.dispatch(logout())
-        renderApp()
-        history.push('/');
+        store.dispatch(startSetPostsWithoutAuth()).then(() => {
+            renderApp()
+            console.log('Logout Success!!')
+        })
     }
 })
 

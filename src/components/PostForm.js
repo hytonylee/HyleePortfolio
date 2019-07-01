@@ -67,7 +67,6 @@ export default class PostForm extends React.Component {
                         placeholder="Title"
                         autoFocus
                         value={this.state.title}
-                        // onChange={this.ontitleChange}
                         onChange={(e) => this.handleChange('title', e.target.value)}
                     />
                     <select

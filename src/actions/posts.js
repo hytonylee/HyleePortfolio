@@ -19,12 +19,20 @@ export const startAddPost = (postData = {}) => {
         } = postData;
         const post = { title, postType, image, createdAt, note, link }
 
-        return database.ref(`users/${uid}/posts`).push(post).then((ref) => {
-            dispatch(addPost({
-                id: ref.key,
-                ...post
-            }))
-        })
+        return (
+            database.ref(`users/${uid}/posts`).push(post).then((ref) => {
+                dispatch(addPost({
+                    id: ref.key,
+                    ...post
+                }))
+            }) &
+            database.ref(`public/${uid}/posts`).push(post).then((ref) => {
+                dispatch(addPost({
+                    id: ref.key,
+                    ...post
+                }))
+            })
+        )
     }
 };
 
@@ -73,16 +81,44 @@ export const startSetPosts = () => {
         const uid = getState().auth.uid
         return database.ref(`users/${uid}/posts`).once('value').then((snapshot) => {
             const posts = [];
-
             snapshot.forEach((childSnapshot) => {
                 posts.push({
                     id: childSnapshot.key,
                     ...childSnapshot.val()
                 });
             });
-
             dispatch(setPosts(posts));
         });
     };
 };
 
+export const startSetPostsWithoutAuth = () => {
+    return (dispatch) => {
+        return database.ref(`public/2hG6elt1HRPU5KQKNSEFZsfofwl2/posts`).once('value').then((snapshot) => {
+            const posts = [];
+            snapshot.forEach((childSnapshot) => {
+                posts.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            });
+            dispatch(setPosts(posts));
+        });
+    };
+};
+
+
+
+// export const startSetPostsWithoutAuth = () => {
+//     return (dispatch) => {
+//         return database.ref('public').on('child_added', (snapshot) => {
+//             const posts = [];
+//             snapshot.forEach((childSnapshot) => {
+//                 posts.push({
+//                     id: childSnapshot.key,
+//                     ...childSnapshot.val()
+//                 });
+//             })
+//         })
+//     }
+// }
