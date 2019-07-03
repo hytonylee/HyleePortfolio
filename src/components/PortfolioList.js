@@ -5,7 +5,6 @@ import selectPosts from '../selectors/post';
 
 const PortfolioList = (props) => (
     < div >
-        <h1>Portfolio List</h1>
         {
             props.posts.map((post) => {
                 return < PortfolioListItem key={post.id} {...post} />

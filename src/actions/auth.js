@@ -10,7 +10,6 @@ export const startLogin = () => {
         return firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
             const token = result.credential.accessToken;
             const user = result.user;
-
             const isNewUser = result.additionalUserInfo.isNewUser;
             if (isNewUser) {
                 console.log('Incorrect login user!!')
