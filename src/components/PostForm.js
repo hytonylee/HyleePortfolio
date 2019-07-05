@@ -63,6 +63,7 @@ export default class PostForm extends React.Component {
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <input
+                        className="text-input"
                         type="text"
                         placeholder="Title"
                         autoFocus
@@ -70,6 +71,7 @@ export default class PostForm extends React.Component {
                         onChange={(e) => this.handleChange('title', e.target.value)}
                     />
                     <select
+                        className='select'
                         name="postType"
                         id="postType"
                         type="postType"
@@ -80,12 +82,14 @@ export default class PostForm extends React.Component {
                         <option value="Blog">Blog</option>
                     </select>
                     <input
+                        className="text-input"
                         type="text"
                         placeholder="Image"
                         value={this.state.image}
                         onChange={(e) => this.handleChange('image', e.target.value)}
                     />
                     <input
+                        className='text-input'
                         type="text"
                         placeholder="Link"
                         value={this.state.link}
@@ -100,7 +104,7 @@ export default class PostForm extends React.Component {
                         isOutsideRange={() => false}
                     />
                     <textarea
-                        cols="30" rows="10"
+                        className="textarea"
                         placeholder="Notes"
                         value={this.state.note}
                         onChange={(e) => this.handleChange('note', e.target.value)}
