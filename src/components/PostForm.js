@@ -59,59 +59,59 @@ export default class PostForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <form className="form" onSubmit={this.onSubmit}>
                 {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
-                    <input
-                        className="text-input"
-                        type="text"
-                        placeholder="Title"
-                        autoFocus
-                        value={this.state.title}
-                        onChange={(e) => this.handleChange('title', e.target.value)}
-                    />
-                    <select
-                        className='select'
-                        name="postType"
-                        id="postType"
-                        type="postType"
-                        value={this.state.postType}
-                        onChange={(e) => this.handleChange('postType', e.target.value)}
-                    >
-                        <option value="Portfolio">Portfolio</option>
-                        <option value="Blog">Blog</option>
-                    </select>
-                    <input
-                        className="text-input"
-                        type="text"
-                        placeholder="Image"
-                        value={this.state.image}
-                        onChange={(e) => this.handleChange('image', e.target.value)}
-                    />
-                    <input
-                        className='text-input'
-                        type="text"
-                        placeholder="Link"
-                        value={this.state.link}
-                        onChange={(e) => this.handleChange('link', e.target.value)}
-                    />
-                    <SingleDatePicker
-                        date={this.state.createdAt}
-                        onDateChange={this.onDateChange}
-                        focused={this.state.calendarFocused}
-                        onFocusChange={this.onFocusChange}
-                        numberOfMonths={1}
-                        isOutsideRange={() => false}
-                    />
-                    <textarea
-                        className="textarea"
-                        placeholder="Notes"
-                        value={this.state.note}
-                        onChange={(e) => this.handleChange('note', e.target.value)}
-                    ></textarea>
-                    <button>Add Post</button>
-                </form>
-            </div>
+                <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Title"
+                    autoFocus
+                    value={this.state.title}
+                    onChange={(e) => this.handleChange('title', e.target.value)}
+                />
+                <select
+                    className='select'
+                    name="postType"
+                    id="postType"
+                    type="postType"
+                    value={this.state.postType}
+                    onChange={(e) => this.handleChange('postType', e.target.value)}
+                >
+                    <option value="Portfolio">Portfolio</option>
+                    <option value="Blog">Blog</option>
+                </select>
+                <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Image"
+                    value={this.state.image}
+                    onChange={(e) => this.handleChange('image', e.target.value)}
+                />
+                <input
+                    className='text-input'
+                    type="text"
+                    placeholder="Link"
+                    value={this.state.link}
+                    onChange={(e) => this.handleChange('link', e.target.value)}
+                />
+                <SingleDatePicker
+                    date={this.state.createdAt}
+                    onDateChange={this.onDateChange}
+                    focused={this.state.calendarFocused}
+                    onFocusChange={this.onFocusChange}
+                    numberOfMonths={1}
+                    isOutsideRange={() => false}
+                />
+                <textarea
+                    className="textarea"
+                    placeholder="Notes"
+                    value={this.state.note}
+                    onChange={(e) => this.handleChange('note', e.target.value)}
+                ></textarea>
+                <div>
+                    <button className="button">Add Post</button>
+                </div>
+            </form>
         )
     }
 }

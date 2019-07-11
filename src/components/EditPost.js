@@ -15,13 +15,21 @@ export class EditPost extends React.Component {
     }
 
     render() {
-        return (<div>
-            <PostForm
-                post={this.props.post}
-                onSubmit={this.onSubmit}
-            />
-            <button onClick={this.onRemove}>Remove</button>
-        </div>)
+        return (
+            <div>
+                <div className="page-header">
+                    <div className="content-container">
+                        <h3 className="page-header__title">Edit Post: {this.props.post.title}</h3>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <PostForm
+                        post={this.props.post}
+                        onSubmit={this.onSubmit}
+                    />
+                    <button className="button button--secondary" onClick={this.onRemove}>Remove</button>
+                </div>
+            </div>)
     }
 }
 

@@ -47,7 +47,8 @@ firebase.auth().onAuthStateChanged((user) => {
                 history.push('/Dashboard')
             }
         })
-    } else {
+    }
+    else {
         store.dispatch(logout())
         store.dispatch(startSetPostsWithoutAuth()).then(() => {
             renderApp()

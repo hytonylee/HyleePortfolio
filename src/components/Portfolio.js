@@ -8,9 +8,13 @@ const Portfolio = () => {
     return (
         <div>
             <PublicHeader />
-            This is the Porfolio Page.
-             <div>
-                <PortfolioListFilter />
+            <div className="page-header">
+                <div className="content-container">
+                    <h3 className="page-header__title">Portfolio</h3>
+                </div>
+            </div>
+            <div>
+                {/* <PortfolioListFilter /> */}
                 <PortfolioList />
             </div>
         </div>

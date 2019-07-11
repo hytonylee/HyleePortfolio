@@ -7,13 +7,19 @@ const CreatePost = (props) => {
 
     return (
         <div>
-            <h1>Create Post</h1>
-            <PostForm
-                onSubmit={(post) => {
-                    props.dispatch(startAddPost(post))
-                    props.history.push('/dashboard')
-                }}
-            />
+            <div className="page-header">
+                <div className="content-container">
+                    <h3 className="page-header__title">Create Post</h3>
+                </div>
+            </div>
+            <div className="content-container">
+                <PostForm
+                    onSubmit={(post) => {
+                        props.dispatch(startAddPost(post))
+                        props.history.push('/dashboard')
+                    }}
+                />
+            </div>
         </div>
     )
 }

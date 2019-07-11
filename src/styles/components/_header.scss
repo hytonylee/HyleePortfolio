@@ -16,3 +16,16 @@
         margin: 0; 
     }
 }
+
+.header-menu {
+    display: flex;
+    align-items: right;
+}
+
+.header-icon {
+    width: 18px;
+    height: 18px;
+    color: white;
+    margin-left: 15px;
+}
+

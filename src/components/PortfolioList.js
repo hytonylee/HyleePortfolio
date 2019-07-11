@@ -4,7 +4,7 @@ import PortfolioListItem from './PortfolioListItem'
 import selectPosts from '../selectors/post';
 
 const PortfolioList = (props) => (
-    < div >
+    < div className="content-container" >
         {
             props.posts.map((post) => {
                 return < PortfolioListItem key={post.id} {...post} />
