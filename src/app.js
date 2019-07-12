@@ -50,9 +50,13 @@ firebase.auth().onAuthStateChanged((user) => {
     }
     else {
         store.dispatch(logout())
-        store.dispatch(startSetPostsWithoutAuth()).then(() => {
-            renderApp()
-            console.log('Logout Success!!')
+        // store.dispatch(startSetPostsWithoutAuth()).then(() => {
+        //     renderApp()
+        //     console.log('Logout Success!!')
+        // })
+        store.dispatch(startSetPosts()).then(() => {
+            renderApp();
+            console.log('you have logged out!!');
         })
     }
 })

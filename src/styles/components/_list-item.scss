@@ -1,0 +1,20 @@
+.list-container {
+    display: block;
+
+    @media(min-width: $desktop-breakpoint) {
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: left;
+        justify-content: space-between;
+    }
+}
+
+ .list-item {
+    width: 50rem;
+    background: cornflowerblue;
+    padding: 10px;
+    margin-bottom: 10px;
+    @media (min-width: $desktop-breakpoint) {
+        width: 39rem;
+    }
+}

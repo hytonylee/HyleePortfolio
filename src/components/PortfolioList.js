@@ -5,11 +5,13 @@ import selectPosts from '../selectors/post';
 
 const PortfolioList = (props) => (
     < div className="content-container" >
-        {
-            props.posts.map((post) => {
-                return < PortfolioListItem key={post.id} {...post} />
-            })
-        }
+        <div className="list-container">
+            {
+                props.posts.map((post) => {
+                    return < PortfolioListItem key={post.id} {...post} />
+                })
+            }
+        </div>
     </div >
 )
 
