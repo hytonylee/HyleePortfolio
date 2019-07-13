@@ -9,7 +9,7 @@
 }
 
 .box-layout__box {
-    background: fade-out(white, .25);
+    background: fade-out($white, .25);
     border-radius: 3px;
     padding: $l-size $m-size;
     text-align: center;

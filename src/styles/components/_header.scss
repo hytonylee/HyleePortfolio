@@ -1,5 +1,6 @@
 .header {
-    background: $dark-blue;
+    background: $blue;
+    border-bottom: 1px solid $cam-blue
 }
 
 .header__content {
@@ -25,7 +26,7 @@
 .header-icon {
     width: 18px;
     height: 18px;
-    color: white;
+    color: $white;
     margin-left: 15px;
 }
 

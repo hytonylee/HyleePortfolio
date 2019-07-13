@@ -10,11 +10,17 @@
 }
 
  .list-item {
-    width: 50rem;
-    background: cornflowerblue;
-    padding: 10px;
+    border-radius: 3px;
+    background: $light-blue;
     margin-bottom: 10px;
     @media (min-width: $desktop-breakpoint) {
         width: 39rem;
+    }
+
+    img {
+        width: 100%;
+        @media (min-width: $desktop-breakpoint) {
+            width: 39rem;
+        }
     }
 }
