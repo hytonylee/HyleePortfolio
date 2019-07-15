@@ -19,7 +19,10 @@ const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
     <div className="list-item">
         <h3>{title}</h3>
         {UserAuthenticated && <button><Link to={`/EditPost/${id}`}>Edit</Link> </button>}
-        {image && <img src={image}></img>}
+        {image &&
+            <div className="img" style={{ backgroundImage: `url(${image})` }}>
+            </div>
+        }
         <li>{link}</li>
         <li>{moment(createdAt).format('MMMM Do, YYYY')}</li>
         <p>{note}</p>
