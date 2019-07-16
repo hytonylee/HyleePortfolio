@@ -17,16 +17,30 @@ firebase.auth().onAuthStateChanged((user) => {
 
 const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
     <div className="list-item">
-        <h3>{title}</h3>
-        {UserAuthenticated && <button><Link to={`/EditPost/${id}`}>Edit</Link> </button>}
-        {image &&
-            <div className="img" style={{ backgroundImage: `url(${image})` }}>
+        {/* {image &&
+            <div className="img" style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: '50rem',
+                backgroundRepeat: 'no-repeat'
+            }}> */}
+        {
+            image &&
+            <img className='img' src={image} />
+        }
+
+        {UserAuthenticated &&
+            <div className="list-header">
+                <h3 className="list-title">{title}</h3>
+                <Link to={`/EditPost/${id}`}><i className="material-icons" style={{ color: 'white' }}>edit</i></Link>
             </div>
         }
-        <li>{link}</li>
-        <li>{moment(createdAt).format('MMMM Do, YYYY')}</li>
-        <p>{note}</p>
+        <div className="list-content">
 
+            {/* <h6>{moment(createdAt).format('MMMM Do, YYYY')}</h6> */}
+            <p>{note}</p>
+        </div>
+        {/* </div>
+        } */}
     </div >
 )
 

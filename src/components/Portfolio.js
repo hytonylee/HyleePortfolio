@@ -9,9 +9,9 @@ const Portfolio = () => {
         <div>
             <PublicHeader />
             <div className="page-header">
-                <div className="content-container">
+                {/* <div className="content-container">
                     <h3 className="page-header__title">Portfolio</h3>
-                </div>
+                </div> */}
             </div>
             <div>
                 {/* <PortfolioListFilter /> */}

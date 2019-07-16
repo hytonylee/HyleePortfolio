@@ -1,24 +1,57 @@
 .list-container {
     display: block;
-
+    color: $white;
     @media(min-width: $desktop-breakpoint) {
         display: flex; 
         flex-wrap: wrap;
-        justify-content: left;
         justify-content: space-between;
     }
 }
 
- .list-item {
+.list-header {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    justify-content: space-between;
+    background-color:rgba(0, 0, 0, 0.5); 
+}
+
+.list-title {
+    font-family: 'Proza Libre', sans-serif;
+    line-height: 0;
+}
+
+.list-date {
+    line-height: 0;
+    margin: 0;
+}
+
+.list-content {
+    padding: 10px;
+}
+
+.list-item {
+    height: 250px;
+    z-index: -2;
     border-radius: 3px;
-    background: $light-blue;
     margin-bottom: 10px;
-    @media (min-width: $desktop-breakpoint) {
-        width: 39rem;
+
+    @each $key,$val in $colors-list {
+       background-color: #{$val};
     }
 
+    @media (min-width: $desktop-breakpoint) {
+        width: 93rem;
+        
+    }
     .img {
-        width: 100%;
+        position: absolute;
+        z-index: -1;
+        border-radius: 3px 3px 0px 0px;
+        opacity: 0.5;
+        vertical-align: middle;
+        object-fit: cover;
+        height: 250px;
+
         @media (min-width: $desktop-breakpoint) {
             width: 39rem;
         }
