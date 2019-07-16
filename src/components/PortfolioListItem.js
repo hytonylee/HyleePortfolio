@@ -5,6 +5,7 @@ import moment from 'moment';
 //Firebase
 import { firebase } from '../firebase/firebase';
 
+
 let UserAuthenticated;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -16,22 +17,18 @@ firebase.auth().onAuthStateChanged((user) => {
 })
 
 const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
-    <div className="list-item">
-        {/* {image &&
-            <div className="img" style={{
-                backgroundImage: `url(${image})`,
-                backgroundSize: '50rem',
-                backgroundRepeat: 'no-repeat'
-            }}> */}
+    <div className="list-item prfx-color">
         {
             image &&
-            <img className='img' src={image} />
+            <img className="img" src={image} />
         }
 
         {UserAuthenticated &&
             <div className="list-header">
                 <h3 className="list-title">{title}</h3>
-                <Link to={`/EditPost/${id}`}><i className="material-icons" style={{ color: 'white' }}>edit</i></Link>
+                {UserAuthenticated && <Link to={`/EditPost/${id}`}>
+                    <i className="material-icons" style={{ color: 'white' }}>edit</i>
+                </Link>}
             </div>
         }
         <div className="list-content">

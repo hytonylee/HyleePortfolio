@@ -12,12 +12,7 @@ $cover-yellow: #F3B736;
 $cover-red: #BE213A;
 $cover-green: #5C8742;
 
-$colors-list: (
-    default: $cover-blue,
-    cover-yellow: $cover-yellow,
-    cover-red: $cover-red,
-    cover-green: $cover-green,
-);
+$colors-list: $cover-blue, $cover-yellow, $cover-red, $cover-green;
 
 // Font Size
 $font-size-large: 1.8rem;

@@ -24,8 +24,8 @@ const AppRouter = () => (
                 <PrivateRoute exact path='/CreatePost' component={CreatePost} />
                 <PrivateRoute exact path='/EditPost/:id' component={EditPost} /> */}
 
-                <Route path='/LoginPage' exact component={LoginPage} />
                 <Route exact path="/" component={Portfolio} />
+                <Route path='/LoginPage' exact component={LoginPage} />
                 <PrivateRoute exact path="/Dashboard" component={Dashboard} />
                 <PrivateRoute exact path='/CreatePost' component={CreatePost} />
                 <PrivateRoute exact path='/EditPost/:id' component={EditPost} />
