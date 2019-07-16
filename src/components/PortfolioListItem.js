@@ -17,28 +17,25 @@ firebase.auth().onAuthStateChanged((user) => {
 })
 
 const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
-    <div className="list-item prfx-color">
+    <div className="list-item">
         {
             image &&
-            <img className="img" src={image} />
+            <img className="list-image" src={image} />
         }
-
-        {UserAuthenticated &&
-            <div className="list-header">
-                <h3 className="list-title">{title}</h3>
-                {UserAuthenticated && <Link to={`/EditPost/${id}`}>
-                    <i className="material-icons" style={{ color: 'white' }}>edit</i>
-                </Link>}
-            </div>
-        }
+        <div className="list-header">
+            <h3 className="list-title">{title}</h3>
+            {
+                UserAuthenticated &&
+                <Link to={`/EditPost/${id}`}>
+                    <i className="material-icons list-link">edit</i>
+                </Link>
+            }
+        </div>
         <div className="list-content">
-
-            {/* <h6>{moment(createdAt).format('MMMM Do, YYYY')}</h6> */}
+            <p className="list-date">{moment(createdAt).format('MMMM Do, YYYY')}</p>
             <p>{note}</p>
         </div>
-        {/* </div>
-        } */}
-    </div >
+    </div>
 )
 
 export default PortfolioListItem;

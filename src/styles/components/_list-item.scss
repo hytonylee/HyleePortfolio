@@ -1,6 +1,7 @@
 .list-container {
     display: block;
     color: $white;
+
     @media(min-width: $desktop-breakpoint) {
         display: flex; 
         flex-wrap: wrap;
@@ -37,7 +38,7 @@
 
 .list-item {
     height: 250px;
-    z-index: -2;
+    // z-index: -1;
     border-radius: 3px;
     margin-bottom: 10px;
     height: 250px;
@@ -46,11 +47,10 @@
         width: 39rem;
         
     }
-    .img {
+    .list-image {
         position: absolute;
         z-index: -1;
         border-radius: 3px 3px 0px 0px;
-        opacity: 0.5;
         vertical-align: middle;
         object-fit: cover;
         height: 250px;
@@ -58,5 +58,14 @@
         @media (min-width: $desktop-breakpoint) {
             width: 39rem;
         }
+    }
+
+    .list-link {
+       color: $white;
+    }
+
+    .list-date {
+        margin-top: $s-size;
+        font-size: $s-size;
     }
 }
