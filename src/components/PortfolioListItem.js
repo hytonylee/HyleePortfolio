@@ -23,7 +23,7 @@ const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
             <img className="list-image" src={image} />
         }
         <div className="list-header">
-            <h3 className="list-title">{title}</h3>
+            <h3 className="list-title">{title.toUpperCase()}</h3>
             {
                 UserAuthenticated &&
                 <Link to={`/EditPost/${id}`}>
@@ -34,6 +34,9 @@ const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
         <div className="list-content">
             <p className="list-date">{moment(createdAt).format('MMMM Do, YYYY')}</p>
             <p>{note}</p>
+        </div>
+        <div className="list-button">
+            View Work
         </div>
     </div>
 )

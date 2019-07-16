@@ -86,21 +86,7 @@ export const startSetPosts = () => {
         });
     };
 };
-
-// export const startSetPostsWithoutAuth = () => {
-//     return (dispatch) => {
-//         return database.ref(`public/2hG6elt1HRPU5KQKNSEFZsfofwl2/posts`).once('value').then((snapshot) => {
-//             const posts = [];
-//             snapshot.forEach((childSnapshot) => {
-//                 posts.push({
-//                     id: childSnapshot.key,
-//                     ...childSnapshot.val()
-//                 });
-//             });
-//             dispatch(setPosts(posts));
-//         });
-//     };
-// };
+;
 
 
 

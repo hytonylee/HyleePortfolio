@@ -58,6 +58,7 @@
 
     .list-title {
         font-family: 'Proza Libre', sans-serif;
+        font-weight: 300;
         line-height: 0;
     }
 
@@ -77,5 +78,11 @@
     .list-date {
         margin-top: $s-size;
         font-size: $s-size;
+    }
+
+    .list-button {
+        border: 1px solid $white;
+        padding: 5px 10px 5px 10px;
+        color: $white;
     }
 }

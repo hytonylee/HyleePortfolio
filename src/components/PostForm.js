@@ -15,7 +15,7 @@ export default class PostForm extends React.Component {
             title: props.post ? props.post.title : '',
             // postType: props.post ? props.post.postType : '',
             postType: 'Portfolio',
-            image: props.image ? props.image.image : '',
+            image: props.post ? props.post.image : '',
             link: props.post ? props.post.link : '',
             note: props.post ? props.post.note : '',
             createdAt: props.post ? moment(props.post.createdAt) : moment(),
@@ -73,7 +73,7 @@ export default class PostForm extends React.Component {
                     className='select'
                     name="postType"
                     id="postType"
-                    type="postType"
+                    type="text"
                     value={this.state.postType}
                     onChange={(e) => this.handleChange('postType', e.target.value)}
                 >
