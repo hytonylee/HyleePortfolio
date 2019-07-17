@@ -4,15 +4,15 @@ import PortfolioListItem from './PortfolioListItem'
 import selectPosts from '../selectors/post';
 
 const PortfolioList = (props) => (
-    < div className="content-container" >
-        <div className="list-container">
-            {
-                props.posts.map((post) => {
-                    return < PortfolioListItem key={post.id} {...post} />
-                })
-            }
-        </div>
-    </div >
+    // < div className="content-container" >
+    <div className="list-container">
+        {
+            props.posts.map((post) => {
+                return < PortfolioListItem key={post.id} {...post} />
+            })
+        }
+    </div>
+    // </div >
 )
 
 // const ConnectedPostList = connect((state) => {

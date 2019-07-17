@@ -5,7 +5,7 @@
     @media(min-width: $desktop-breakpoint) {
         display: flex; 
         flex-wrap: wrap;
-        justify-content: space-between;
+        // justify-content: space-between;
     }
 
     @for $i from 1 through length($colors-list) {
@@ -18,16 +18,15 @@
 
 
 .list-item {
-    height: 250px;
     // z-index: -1;
-    border-radius: 3px;
-    margin-bottom: 10px;
+    // border-radius: 3px;
+    // margin-bottom: 10px;
     height: 250px;
-    max-width: 100rem;
+    width: 100%;
     overflow: hidden;
 
     @media (min-width: $desktop-breakpoint) {
-        max-width: 39rem;
+        max-width: 50%;
         height: 250px;
         overflow: hidden;
     }
@@ -36,7 +35,7 @@
         display: block;
         position: absolute;
         z-index: -1;
-        border-radius: 3px 3px 0px 0px;
+        // border-radius: 3px 3px 0px 0px;
         // vertical-align: middle;
         object-fit: cover;
         width: 100%;
@@ -45,7 +44,7 @@
 
         @media (min-width: $desktop-breakpoint) {
            display: block;
-           width: 39rem;
+           width: 50%;
         }
     }
 
@@ -81,8 +80,20 @@
     }
 
     .list-button {
+        font-family: 'Proza Libre', sans-serif;
+        font-weight: 300;
         border: 1px solid $white;
-        padding: 5px 10px 5px 10px;
+        border-radius: 3px;
+        text-align: center;
+        padding: 5px 20px 5px 20px;
         color: $white;
+        width: 40%;
+        margin-left: 10px;
+        text-decoration: none;
+
+        &:hover {
+            background: rgba(107, 104, 104, 0.5);
+            color: black;
+        }
     }
 }

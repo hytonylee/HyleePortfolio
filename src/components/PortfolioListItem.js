@@ -35,9 +35,9 @@ const PortfolioListItem = ({ id, title, image, link, note, createdAt }) => (
             <p className="list-date">{moment(createdAt).format('MMMM Do, YYYY')}</p>
             <p>{note}</p>
         </div>
-        <div className="list-button">
+        <a href={link} className='list-button'>
             View Work
-        </div>
+        </a>
     </div>
 )
 
