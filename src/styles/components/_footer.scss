@@ -1,0 +1,18 @@
+.footer-container {
+    margin-top: $m-size;
+    align-items: center;
+    display: flex;
+    // justify-content: space-between;
+    padding: 0;
+
+    .logo {
+        width: 80px;
+        height: auto;
+    }
+
+    .text {
+        color: $white;
+        font-size: 1;
+    }
+
+}

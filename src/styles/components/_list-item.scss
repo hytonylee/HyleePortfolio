@@ -50,9 +50,10 @@
 
     .list-header {
         display: flex;
-        padding: 10px 10px 0px 10px;
+        padding: 10px 20px 10px 10px;
+        padding-left: 3rem;
         justify-content: space-between;
-        background-color:rgba(0, 0, 0, 0.5); 
+        background-color: $dark-grey-alt; 
     }
 
     .list-title {
@@ -67,7 +68,18 @@
     }
 
     .list-content {
-        padding: 10px;
+        max-width: 90%;
+        // padding: 20px;
+        padding-left: 3rem;
+
+         @media (min-width: $desktop-breakpoint) {
+           width: 50%;
+        }
+
+    .list-note {
+        margin-top: $s-size;
+    }
+        
     }
 
     .list-link {
@@ -75,25 +87,25 @@
     }
 
     .list-date {
-        margin-top: $s-size;
         font-size: $s-size;
     }
 
     .list-button {
         font-family: 'Proza Libre', sans-serif;
-        font-weight: 300;
+        font-weight: 400;
         border: 1px solid $white;
         border-radius: 3px;
+        margin-top: $m-size;
         text-align: center;
         padding: 5px 20px 5px 20px;
         color: $white;
         width: 40%;
-        margin-left: 10px;
         text-decoration: none;
 
         &:hover {
+            border: 1px solid $dark-grey;
             background: rgba(107, 104, 104, 0.5);
-            color: black;
+            color: $dark-grey;
         }
     }
 }

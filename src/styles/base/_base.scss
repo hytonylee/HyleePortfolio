@@ -4,13 +4,14 @@
 
 html {
   font-size: 62.5%;
+  background-color: $dark-grey;
 }
 
 body {
   color: $dark-grey;
   font-family: 'Open Sans', sans-serif;
   font-size: $m-size;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 button {

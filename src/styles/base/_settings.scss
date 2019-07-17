@@ -1,14 +1,16 @@
 // Colors
 $dark-grey: #333333;
+$dark-grey-alt: rgba(51, 51, 51, 0.7);
 $blue: #00B1C1;
+$dark-blue: rgb(20, 101, 109);
 $light-blue: #A1D2CE;
 $cam-blue: #9FB8AD;
 $dark-green: #1D2220;
 $white: #FCF8F6;
-$light-grey: #FCF8F6;
+$light-grey: $white;
 
 $cover-blue: rgba(54, 140, 199, 0.7);
-$cover-yellow: rgba(243, 183, 54, 0.7);
+$cover-yellow: rgba(206, 151, 34, 0.7);
 $cover-red: rgba(190, 33, 58, 0.7);
 $cover-green: rgba(92, 135, 66, 0.7);
 
